@@ -36,23 +36,22 @@ services:
         build:
             dockerfile: ./docker/mysql/Dockerfile
         image: mysql:9.1.0
-        #restart: unless-stopped
+        restart: unless-stopped
         volumes:
             - market_mysql_data:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_ROOT_USER: ${DB_USERNAME}
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_CHARSET: utf8mb4
             MYSQL_COLLATION: utf8mb4_unicode_ci
-            #MYSQL_USER=admin
-            #MYSQL_PASSWORD=root
         ports:
             - "3306:3306"
         container_name: market_mysql
         networks:
             - app-network
 
+# Docker Volumes
 volumes:
     market_mysql_data:
 
