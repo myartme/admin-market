@@ -13,8 +13,7 @@ DB_PORT=3306<br>
 DB_DATABASE=market_db<br>
 DB_USERNAME=root<br>
 DB_PASSWORD=localPass<br>
-1. Запуск миграций для laravel<br>
-docker exec -it market_php bash<br>
-php artisan migrate<br>
+1. Команды при инициализации проекта<br>
+docker exec market_php bash -c "php artisan migrate && php artisan db:seed"<br>
 1. Проверка работоспособности<br>
 http://localhost:80<br>

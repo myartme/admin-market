@@ -3,7 +3,7 @@ services:
     php:
         build:
             context: .
-            dockerfile: /docker/php/Dockerfile
+            dockerfile: ./docker/php/Dockerfile
         volumes:
             - ./:/var/www
             - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
@@ -18,6 +18,7 @@ services:
     # Nginx Service
     nginx:
         build:
+            context: .
             dockerfile: ./docker/nginx/Dockerfile
         volumes:
             - ./:/var/www
@@ -33,8 +34,6 @@ services:
 
     # MySQL Service
     mysql:
-        build:
-            dockerfile: ./docker/mysql/Dockerfile
         image: mysql:9.1.0
         restart: unless-stopped
         volumes:
@@ -47,7 +46,19 @@ services:
             MYSQL_COLLATION: utf8mb4_unicode_ci
         ports:
             - "3306:3306"
-        container_name: market_mysql
+        networks:
+            - app-network
+
+    # Node Service
+    front:
+        build:
+            context: .
+            dockerfile: ./docker/node/Dockerfile
+        volumes:
+            - .:/var/www
+        ports:
+            - "5173:5173"
+        container_name: market_front
         networks:
             - app-network
 
