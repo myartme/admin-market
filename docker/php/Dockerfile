@@ -25,4 +25,4 @@ RUN composer install
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+CMD ["php-fpm && php artisan inertia:start-ssr"]
