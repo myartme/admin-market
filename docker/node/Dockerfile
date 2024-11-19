@@ -7,4 +7,4 @@ USER node
 
 EXPOSE 5173
 
-CMD ["sh", "-c", "npm install && npm run dev -- --host --hmr"]
+CMD ["sh", "-c", "npm install && npm run dev -- --host"]
