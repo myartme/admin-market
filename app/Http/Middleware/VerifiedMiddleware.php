@@ -15,7 +15,7 @@ class VerifiedMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check() || !auth()->user()->hasVerifiedEmail()) {
+        if (!auth()->check() /*|| !auth()->user()->hasVerifiedEmail()*/) {
             logger('User '.auth()->user().' can\'t login.'.' Email is not verified');
             return redirect()->route('auth.login.create');
         }
