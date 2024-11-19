@@ -7,6 +7,6 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::middleware(['auth'/*, 'verified'*/])->group(function () {
+Route::middleware(['verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
