@@ -19,7 +19,8 @@ Route::group([], function () {
         Route::post('register', [RegisterController::class, 'store']);
         Route::post('login', [LoginController::class, 'store']);
     });
-    Route::middleware('auth:sanctum')->post('logout', [LoginController::class, 'destroy']);
+    Route::post('logout', [LoginController::class, 'destroy'])
+        ->middleware('auth:sanctum');
 
     Route::group([
         'prefix' => 'tokens',
