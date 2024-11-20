@@ -25,6 +25,6 @@ defineProps({
     :required="required"
     :placeholder="placeholder"
     @input="$emit('update:modelValue', $event.target.value)"
-    class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:outline-none focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
+    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
 >
 </template>
