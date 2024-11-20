@@ -2,11 +2,9 @@
 </script>
 
 <template>
-    <div>
-        <h1>
-            home page 111 asdasd 123123 фывфвфвф @dsfsdfsdf
-        </h1>
-    </div>
+   <h1>
+        home page
+    </h1>
 </template>
 
 <style></style>
