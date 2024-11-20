@@ -4,7 +4,7 @@
 <template>
     <div>
         <h1>
-            home page 111 asdasd 123123 фывфвфвф @dsfsdfsdf
+            home page 1
         </h1>
     </div>
 </template>
